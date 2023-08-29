@@ -92,7 +92,7 @@ const CampaignDetail = () => {
 							return (
 								<audio controls>
 									<source
-										src={`http://143.42.68.33:5004${url}`}
+										src={`https://telesale.nguyenvanhung.xyz${url}`}
 										type={fileType}
 									/>
 									Your browser does not support the audio
