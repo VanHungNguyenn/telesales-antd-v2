@@ -34,8 +34,8 @@ const AddNewGroup = ({
 			})
 
 			const newGroup: IGroup = {
-				key: res.data.data._id,
-				label: res.data.data.name,
+				key: res.data.newCustomerGroup._id,
+				label: res.data.newCustomerGroup.name,
 				data: [],
 			}
 
