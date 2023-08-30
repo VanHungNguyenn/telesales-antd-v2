@@ -45,19 +45,9 @@ const CampaignDetail = () => {
 				dataSource={callHistories}
 				columns={[
 					{
-						title: 'ID',
-						dataIndex: '_id',
-						key: '_id',
-					},
-					{
 						title: 'Call Duration',
 						dataIndex: 'callDuration',
 						key: 'callDuration',
-					},
-					{
-						title: 'Customer ID',
-						dataIndex: ['customerId', '_id'], // Use array for nested object path
-						key: 'customerId',
 					},
 					{
 						title: 'User Name',
@@ -78,6 +68,22 @@ const CampaignDetail = () => {
 						title: 'Note',
 						dataIndex: 'note',
 						key: 'note',
+					},
+					{
+						title: 'createdAt',
+						dataIndex: 'createdAt',
+						key: 'createdAt',
+						render: (date: string) => {
+							return new Date(date).toLocaleString()
+						},
+					},
+					{
+						title: 'updatedAt',
+						dataIndex: 'updatedAt',
+						key: 'updatedAt',
+						render: (date: string) => {
+							return new Date(date).toLocaleString()
+						},
 					},
 					{
 						title: 'Record File',
