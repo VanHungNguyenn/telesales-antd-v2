@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { useRouter, usePathname } from 'next/navigation'
-import { Button, Table } from 'antd'
+import { Button, Table, Tag } from 'antd'
 import { axiosConfig } from '@/api/apiConfig'
 
 const CampaignDetail = () => {
@@ -48,6 +48,9 @@ const CampaignDetail = () => {
 						title: 'Call Duration',
 						dataIndex: 'callDuration',
 						key: 'callDuration',
+						render: (duration: number) => {
+							return `${duration}s`
+						},
 					},
 					{
 						title: 'User Name',
@@ -63,6 +66,21 @@ const CampaignDetail = () => {
 						title: 'Status',
 						dataIndex: 'status',
 						key: 'status',
+						render: (status: string) => {
+							return (
+								<Tag
+									color={
+										status === 'answered'
+											? 'green'
+											: status === 'busy'
+											? 'yellow'
+											: 'red'
+									}
+								>
+									{status}
+								</Tag>
+							)
+						},
 					},
 					{
 						title: 'Note',
@@ -70,17 +88,9 @@ const CampaignDetail = () => {
 						key: 'note',
 					},
 					{
-						title: 'createdAt',
+						title: 'Call At',
 						dataIndex: 'createdAt',
 						key: 'createdAt',
-						render: (date: string) => {
-							return new Date(date).toLocaleString()
-						},
-					},
-					{
-						title: 'updatedAt',
-						dataIndex: 'updatedAt',
-						key: 'updatedAt',
 						render: (date: string) => {
 							return new Date(date).toLocaleString()
 						},
