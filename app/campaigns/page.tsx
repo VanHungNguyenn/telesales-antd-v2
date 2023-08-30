@@ -115,7 +115,7 @@ const Campaigns = () => {
 			axiosConfig
 				.post('/script/add', formData, {
 					headers: {
-						'Content-Type': 'multipart/form-data',
+						'Content-Type': 'multipart/form-data; charset=UTF-8',
 					},
 				})
 				.then((res) => {
@@ -130,7 +130,7 @@ const Campaigns = () => {
 					setListScripts([...listScripts, newScript])
 				})
 				.catch((error) => {
-					console.log(error)
+					message.error(error.response.data.message)
 				})
 		}
 	}
