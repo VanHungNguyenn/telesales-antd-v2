@@ -21,6 +21,7 @@ const Campaigns = () => {
 				script: campaign.scriptId.name,
 				status: campaign.status,
 				name: campaign.name,
+				note: campaign.note,
 			}))
 
 			setListCampaigns(dataCampaigns)
@@ -311,12 +312,6 @@ const Campaigns = () => {
 					dataSource={listCampaigns}
 					columns={[
 						{
-							title: 'ID',
-							dataIndex: 'id',
-							key: 'id',
-							width: 100,
-						},
-						{
 							title: 'Group customer',
 							dataIndex: 'groupCustomer',
 							key: 'groupCustomer',
@@ -339,6 +334,11 @@ const Campaigns = () => {
 							dataIndex: 'status',
 							key: 'status',
 							width: 200,
+						},
+						{
+							title: 'note',
+							dataIndex: 'note',
+							key: 'note',
 						},
 						{
 							title: 'Action',
