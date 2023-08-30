@@ -43,8 +43,8 @@ const AddNewGroup = ({
 			message.success(res.data.message)
 			setShowAddNewGroup(false)
 			form.resetFields()
-		} catch (error) {
-			message.error('Add new group failed!')
+		} catch (error: any) {
+			message.error(error.response.data.message)
 		}
 	}
 
